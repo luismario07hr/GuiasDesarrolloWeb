@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú de Guías</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FDF5E6;
+            color: #2F4F4F;
+            margin: 0;
+        }
+
+        .pantalla-centrada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .titulo-principal {
+            font-family: 'Comic Neue', cursive;
+            color: #8B0000;
+            font-size: 3.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px #DEB887;
+        }
+
+        .cuadricula-enlaces {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .cuadro-link {
+            background-color: #FFF8DC;
+            border: 3px solid #DEB887;
+            border-bottom: 8px solid #228B22;
+            color: #2F4F4F;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .cuadro-link:hover {
+            background-color: #FFD700;
+            color: #8B0000;
+            border-color: #8B0000;
+            border-bottom: 8px solid #8B0000;
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pantalla-centrada">
+        <h1 class="titulo-principal">Portafolio de Guías</h1>
+        
+        <div class="cuadricula-enlaces">
+            <a href="Guia1/links.html" class="cuadro-link">Guía 1</a>
+            <a href="guia2.html" class="cuadro-link">Guía 2</a>
+            <a href="guia3.html" class="cuadro-link">Guía 3</a>
+            <a href="guia4.html" class="cuadro-link">Guía 4</a>
+            <a href="guia5.html" class="cuadro-link">Guía 5</a>
+            <a href="guia6.html" class="cuadro-link">Guía 6</a>
+        </div>
+    </div>
+
+</body>
+</html>
