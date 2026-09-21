@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* =========================================
+   Tokens y Variables (Estilo Shop)
+========================================= */
+:root {
+  /* Colores */
+  --color-canvas-mist: #f2f4f5;
+  --color-pure-white: #ffffff;
+  --color-ink-black: #000000;
+  --color-faint-border: #ebebeb;
+  --color-muted-gray: #787574;
+  --color-shop-violet: #5433eb;
+  
+  /* Tipografía */
+  --font-shop: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Radios (Soft Pillow) */
+  --radius-inner: 20px;
+  --radius-card: 28px;
+  --radius-pill: 9999px;
+  
+  /* Sombras */
+  --shadow-pill: rgba(0, 0, 0, 0.06) 0px 2px 8px 0px;
+  --shadow-card: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+  --shadow-violet: rgba(69, 36, 219, 0.34) 0px 4px 24px 0px;
+
+  /* Espaciado */
+  --section-gap: 64px;
+}
+
+/* =========================================
+   Reset y Base (Con corrección de Footer)
+========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%; /* Necesario para que el flex funcione en toda la pantalla */
+}
+
+body {
+  background-color: var(--color-canvas-mist);
+  color: var(--color-ink-black);
+  font-family: var(--font-shop);
+  font-size: 16px;
+  line-height: 1.33;
+  letter-spacing: -0.031em;
+  -webkit-font-smoothing: antialiased;
+  
+  /* Flexbox para forzar el footer al fondo */
+  display: flex;
+  flex-direction: column;
+}
+
+/* El main toma todo el espacio disponible empujando el footer abajo */
+main {
+  flex: 1 0 auto;
+  padding-top: 48px; /* Corrección: Separación extra con el header */
+  padding-bottom: 64px;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================
+   Tipografía
+========================================= */
+h1, h2, h3, .heading-display {
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: var(--color-ink-black);
+}
+
+h1 { font-size: clamp(32px, 5vw, 48px); }
+h2 { font-size: clamp(24px, 4vw, 32px); margin-bottom: 24px; }
+h3 { font-size: 16px; }
+
+.text-muted { color: var(--color-muted-gray); }
+.text-caption { font-size: 11px; font-weight: 500; letter-spacing: -0.02em; }
+.text-sm { font-size: 14px; font-weight: 500; letter-spacing: -0.014em; }
+
+/* =========================================
+   Componentes Core
+========================================= */
+.app-banner {
+  background-color: var(--color-ink-black);
+  color: var(--color-pure-white);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.site-header {
+  background-color: var(--color-pure-white);
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-pill);
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo-wordmark {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  display: flex;
+  align-items: baseline;
+}
+.logo-wordmark .dot { color: var(--color-shop-violet); }
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted-gray);
+  transition: color 0.2s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--color-ink-black);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--color-faint-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-pill);
+  cursor: pointer;
+}
+
+/* Buscador y Botones */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-pure-white);
+  border: 1px solid var(--color-faint-border);
+  border-radius: var(--radius-pill);
+  padding: 4px 4px 4px 20px;
+}
+.search-bar:focus-within { border-color: var(--color-shop-violet); }
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-family: var(--font-shop);
+  font-size: 16px;
+}
+.btn-violet {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-shop-violet);
+  color: var(--color-pure-white);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-violet);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.btn-violet:hover { transform: scale(1.05); }
+
+.btn-pill-action {
+  background-color: var(--color-shop-violet);
+  color: var(--color-pure-white);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: var(--shadow-violet);
+  cursor: pointer;
+}
+
+/* =========================================
+   Tarjetas de Producto
+========================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.shop-card {
+  background-color: var(--color-pure-white);
+  border-radius: var(--radius-card);
+  padding: 8px; 
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.shop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-pill), 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.shop-card-image {
+  border-radius: var(--radius-inner);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: var(--color-faint-border); /* Respaldo de color si no carga la imagen */
+}
+
+.shop-card-info {
+  padding: 16px 8px 8px 8px;
+}
+
+/* =========================================
+   Formularios y Contacto
+========================================= */
+.form-group {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-group label {
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 12px;
+}
+.form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--color-faint-border);
+  background-color: var(--color-pure-white);
+  font-family: var(--font-shop);
+  font-size: 16px;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--color-shop-violet);
+}
+textarea.form-input {
+  border-radius: 24px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================================
+   Animaciones
+========================================= */
+.animate-float-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.card-grid .shop-card:nth-child(1) { animation-delay: 0.1s; }
+.card-grid .shop-card:nth-child(2) { animation-delay: 0.15s; }
+.card-grid .shop-card:nth-child(3) { animation-delay: 0.2s; }
+.card-grid .shop-card:nth-child(4) { animation-delay: 0.25s; }
+.card-grid .shop-card:nth-child(5) { animation-delay: 0.3s; }
+.card-grid .shop-card:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes floatIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer (Fijado al fondo mediante flex) */
+.site-footer {
+  background-color: var(--color-pure-white);
+  padding: 40px 0;
+  border-top: 1px solid var(--color-faint-border);
+  flex-shrink: 0; /* Asegura que el footer no se encoja */
+}
