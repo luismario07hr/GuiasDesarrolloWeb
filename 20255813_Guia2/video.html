@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Explicativo - Desarrollo Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FDF5E6; /* Beige claro, manteniendo la paleta */
+            color: #2F4F4F;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .contenedor-principal {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-top: 8px solid #8B0000; /* Borde superior decorativo rojo oscuro */
+            text-align: center;
+        }
+
+        /* Títulos y textos */
+        h1 {
+            color: #8B0000;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        p.descripcion {
+            font-size: 1.1em;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        /* Contenedor del video (para que sea responsivo) */
+        .contenedor-video {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: #000;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 4px solid #DEB887;
+        }
+
+        .contenedor-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Botón de regreso */
+        .boton-regresar {
+            display: inline-block;
+            background-color: #228B22; /* Verde bosque */
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .boton-regresar:hover {
+            background-color: #FFD700; /* Dorado */
+            color: #8B0000;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <h1>Video Desarrollo Web</h1>
+        <p class="descripcion">Explicación del proceso de rediseño, prompts utilizados y análisis de correspondencia HTML/CSS.</p>
+        
+        <!-- Incrustación del video de YouTube -->
+       <div class="contenedor-video">
+            <iframe 
+                src="https://www.youtube.com/embed/JasToYzxyBA" 
+                title="Video Explicativo - Desarrollo Web" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Enlace para volver al menú de tu proyecto -->
+        <a href="index.html" class="boton-regresar">Volver al Menú Principal</a>
+    </div>
+
+</body>
+</html>

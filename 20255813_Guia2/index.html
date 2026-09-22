@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal - Guía 2</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #5e35b1;
+            margin-bottom: 30px;
+        }
+
+        .menu-navegacion {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .seccion-titulo {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 8px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .seccion-titulo:first-child {
+            margin-top: 0;
+        }
+
+        .menu-navegacion a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #1e88e5;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .menu-navegacion a:hover {
+            background-color: #5e35b1;
+        }
+
+        .btn-coplasa {
+            background-color: #3949ab !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Índice Guia 2</h1>
+
+    <nav class="menu-navegacion">
+        
+        <div class="seccion-titulo">Páginas Principales</div>
+        <a href="biografia.html">Mi Biografía</a>
+        <a href="pelicula.html">Película (Altamar)</a>
+        <a href="tablero.html">Tablero</a>
+        <a href="video.html">Video</a>
+
+        <div class="seccion-titulo">Proyecto Coplasa</div>
+        <a href="Coplasa/index.html" class="btn-coplasa">Inicio de Coplasa</a>
+    </nav>
+
+</body>
+</html>
