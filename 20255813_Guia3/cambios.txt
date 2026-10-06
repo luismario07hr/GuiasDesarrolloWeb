@@ -1,0 +1,59 @@
+Cambios de Coplasa en la pagina web
+
+impieza y unificación de código CSS: Se eliminaron selectores y estilos redundantes 
+(como las clases duplicadas para el catálogo), unificando todas las tarjetas del sitio
+bajo un solo componente base (.shop-card).
+
+Corrección de espaciados: Se ajustaron las alturas mínimas (min-height) del
+Hero y se redujo la variable global de margen de secciones (--section-space) para eliminar 
+los grandes espacios en blanco.
+
+Implementación de animaciones escalonadas: Se reemplazó la aparición estática por una 
+animación de entrada (floatIn) apoyada por clases de retraso (.delay-1, .delay-2, etc.), 
+logrando que los elementos carguen en cascada.
+
+Ajuste de interacciones (Efecto Hover): Se eliminó un efecto de zoom molesto que acercaba la imagen
+hacia la pantalla al pasar el cursor, reemplazándolo por un levantamiento limpio y profesional de 
+la tarjeta completa (translateY(-20px)).
+
+Estabilización del Pie de Página (Footer): Se corrigió la estructura del contenedor principal utilizando
+CSS Grid para asegurar que el footer se mantenga siempre anclado al fondo de la pantalla, sin subirse 
+cuando hay poco contenido.
+
+Cambio footer y header: Se mantuvo el mismo header y footer en todas las paginas. Originalmente, unas
+paginas tenían header y footer diferentes.
+
+Se centro en index la primera sección.
+
+
+--------------------------------------------------
+--------------------------------------------------
+
+
+Promt: Actúa como un desarrollador web Senior experto en UI/UX y CSS moderno. Necesito que rediseñes el sitio web de un cliente para que tenga un aspecto mucho más profesional, corporativo y moderno.
+
+Dinámica de trabajo: Te estaré proporcionando el código de las páginas web actuales (HTML y CSS) una por una. Tú deberás analizar el código que te envíe en cada paso y devolverme la versión mejorada basándote en las siguientes especificaciones:
+
+1. Temática y finalidad del sitio: El sitio es para "Coplasa", una empresa salvadoreña especializada en proveer materia prima para diversas industrias (corte y confección, tapicería, carpintería, zapatería, construcción, etc.). La finalidad es captar la atención de clientes B2B y talleres, transmitiendo confianza, solidez corporativa y facilitando el descubrimiento de los materiales.
+
+2. Nueva página obligatoria ("Sobre Nosotros"): Como parte del proyecto, deberás crear una página completamente nueva llamada nosotros.html ("Sobre Nosotros"). Deberás redactar y estructurar tú mismo la información corporativa (historia, misión, visión, valores, etc.), asumiendo el rol de una empresa consolidada y líder en El Salvador en el rubro de materias primas.
+
+3. Comportamiento de la sección Catálogo: En la sección o página de catálogo, existen dos opciones de navegación: que al hacer clic en una categoría los productos aparezcan más abajo en la misma página, o que redirija a otra web. Por el momento, haz que todas las categorías lleven exactamente al mismo lugar. Puedes usar un enlace genérico (ej. href="#productos" o href="productos.html") para todas las tarjetas de categorías.
+
+4. Contenido que debe conservarse (cuando te envíe la página de Inicio): Debes mantener la estructura de la información actual:
+
+Un banner superior promocionando la App.
+El encabezado (Header) con el logo tipográfico y la navegación.
+La sección "Hero" que incluye el título principal, un buscador descriptivo y etiquetas rápidas de categorías.
+La sección de industrias o categorías destacadas.
+El pie de página (Footer).
+
+5. Identidad visual y libertad creativa: Conserva la base de la paleta de colores actual para mantener la identidad (fondos claros como #f2f4f5 o #ffffff, texto oscuro para legibilidad, y el color de acento violeta #5433eb para llamadas a la acción). Sin embargo, no tiene que ser exactamente igual al diseño original. Tienes total libertad creativa para modificar tipografías, alterar el nivel de redondez de los bordes, ajustar sombras y redefinir componentes para que el resultado se vea lo más profesional, corporativo y pulido posible.
+
+6. Enfoque Mobile First (Obligatorio): Todo el CSS debe estar escrito bajo la metodología Mobile First. Define primero los estilos estructurales para pantallas pequeñas (móviles) por defecto, y luego utiliza Media Queries (@media (min-width: ...)) para ir adaptando el diseño progresivamente a tablets y pantallas de escritorio.
+
+7. Uso obligatorio y estructural de CSS Grid: REGLA CRÍTICA: La distribución principal de cada página DEBE estar construida con CSS Grid (display: grid). No utilices Grid únicamente para la galería de tarjetas o componentes aislados. Debes aplicar Grid en el contenedor principal (ej. <main>, .layout-container o el body) para definir el esqueleto y la macro-arquitectura de la página (usando grid-template-areas o un sistema de columnas). Puedes usar Flexbox (display: flex) únicamente para micro-componentes internos (menús, alinear iconos dentro de un botón, etc.).
+
+8. Generación de código: Entrégame el resultado en bloques de código separados: uno exclusivo para el HTML y otro para el CSS. El código debe ser funcional, limpio y estar listo para probarse.
+
+Si has entendido las instrucciones, responde únicamente con: "Entendido. Quedo a la espera del código de la primera página para comenzar con el rediseño."

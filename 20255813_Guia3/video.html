@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Explicativo - Desarrollo Web</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FDF5E6;
+            color: #2F4F4F;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .contenedor-principal {
+            width: calc(100% - 40px);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-top: 8px solid #8B0000;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Títulos y textos */
+        h1 {
+            color: #8B0000;
+            font-size: 2.2em;
+            margin: 0 0 10px;
+        }
+
+        p.descripcion {
+            font-size: 1.1em;
+            color: #555555;
+            margin: 0 0 30px;
+        }
+
+        /* Contenedor del video */
+        .contenedor-video {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background-color: #000000;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 4px solid #DEB887;
+            box-sizing: border-box;
+        }
+
+        .contenedor-video iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Botón de regreso */
+        .boton-regresar {
+            display: inline-block;
+            background-color: #228B22;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 12px 24px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .boton-regresar:hover {
+            background-color: #FFD700;
+            color: #8B0000;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 600px) {
+            .contenedor-principal {
+                width: calc(100% - 20px);
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.7em;
+            }
+
+            p.descripcion {
+                font-size: 1em;
+            }
+
+            .boton-regresar {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor-principal">
+
+        <h1>Video Desarrollo Web</h1>
+
+        <p class="descripcion">
+            Explicación del proceso de rediseño, prompts utilizados y análisis de correspondencia HTML/CSS.
+        </p>
+
+        <!-- Video de YouTube -->
+        <div class="contenedor-video">
+            <iframe
+                src="https://www.youtube.com/embed/X1V42efJveY"
+                title="Video Explicativo - Desarrollo Web"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <a href="index.html" class="boton-regresar">
+            Volver al Menú Principal
+        </a>
+
+    </div>
+
+</body>
+</html>
