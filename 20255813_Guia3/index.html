@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía 3 - 20255813</title>
+    <style>
+        :root{
+            --color-texto: #342e29;
+            --color-fondo: #f5efe6;
+            --color-principal: #293e36;
+            --color-acento: #93472f;
+            --color-superficie: #ffffff;
+            --color-contraste: #ead1ad;
+            --color-borde: #ded3c4;
+            --color-sombra: rgba(52, 46, 41, 0.10);
+        }
+
+        body{
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+        }
+
+        .contenedor{
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3{
+            line-height: 1.2;
+        }
+
+        a{
+            color: var(--color-acento);
+        }
+
+        a:hover, a:focus-visible{
+            color: var(--color-principal);
+        }
+
+        .encabezado-principal{
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 1rem 0;
+            color: var(--color-superficie);
+            background-color: var(--color-principal);
+        }
+
+        .marca{
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        .presentacion{
+            padding: 3rem 0;
+            color: var(--color-superficie);
+            background-color: var(--color-principal);
+        }
+
+        .presentacion h1{
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+
+        .presentacion p{
+            max-width: 640px;
+            margin: 0;
+        }
+
+        .lugares{
+            padding: 3rem 0;
+        }
+
+        .lugares h2{
+            margin: 0 0 2rem 0;
+            color: var(--color-principal);
+            font-size: 2rem;
+        }
+
+        .tarjetas{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .tarjeta{
+            flex: 1 1 300px;
+            max-width: 360px;
+            padding: 1.25rem;
+            background-color: var(--color-superficie);
+            border: 1px solid var(--color-borde);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px var(--color-sombra);
+        }
+
+        .carpeta{
+            margin: 0;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--color-acento);
+        }
+
+        .tarjeta h3{
+            margin: 0.25rem 0 0.75rem 0;
+            font-size: 1.35rem;
+            color: var(--color-principal);
+        }
+
+        .tarjeta ul{
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .tarjeta a{
+            font-weight: bold;
+        }
+
+        .pie-pagina{
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--color-superficie);
+            background-color: var(--color-principal);
+        }
+    </style>
+</head>
+<body>
+    <header class="encabezado-principal">
+        <div class="contenedor">
+            <span class="marca">Guía 3 - 20255813</span>
+        </div>
+    </header>
+
+    <section class="presentacion">
+        <div class="contenedor">
+            <h1>Mis trabajos de la Guía 3</h1>
+            <p>Aquí puedes entrar a cada una de las carpetas y páginas del proyecto.</p>
+        </div>
+    </section>
+
+    <main class="lugares">
+        <div class="contenedor">
+            <h2>Carpetas del proyecto</h2>
+
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <p class="carpeta">coplasa</p>
+                    <h3>Coplasa</h3>
+                    <ul>
+                        <li><a href="coplasa/index.html">Inicio</a></li>
+                        <li><a href="coplasa/nosotros.html">Nosotros</a></li>
+                        <li><a href="coplasa/productos.html">Productos</a></li>
+                        <li><a href="coplasa/contacto.html">Contacto</a></li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <p class="carpeta">coplasaV1.0</p>
+                    <h3>Coplasa V1.0</h3>
+                    <ul>
+                        <li><a href="coplasaV1.0/index.html">Inicio</a></li>
+                        <li><a href="coplasaV1.0/nosotros.html">Nosotros</a></li>
+                        <li><a href="coplasaV1.0/productos.html">Productos</a></li>
+                        <li><a href="coplasaV1.0/contacto.html">Contacto</a></li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <p class="carpeta">ejemplo1</p>
+                    <h3>Ejemplo 1</h3>
+                    <ul>
+                        <li><a href="ejemplo1/index.html">Ver página</a></li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <p class="carpeta">ejemplo2</p>
+                    <h3>Ejemplo 2</h3>
+                    <ul>
+                        <li><a href="ejemplo2/index.html">Ver página</a></li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <p class="carpeta">ejercicio</p>
+                    <h3>Ejercicio</h3>
+                    <ul>
+                        <li><a href="ejercicio/ejercicio.html">Ejercicio 1</a></li>
+                        <li><a href="ejercicio/ejercicio2.html">Ejercicio 2</a></li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <p>Guía 3 - 20255813</p>
+        </div>
+    </footer>
+</body>
+</html>
