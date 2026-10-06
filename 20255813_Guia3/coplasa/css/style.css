@@ -610,6 +610,7 @@ main {
 
 .catalog-business-section {
   padding-block: 0 var(--section-space);
+  margin-top: 40px;
 }
 
 .catalog-business-panel {
