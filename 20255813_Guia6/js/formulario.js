@@ -19,11 +19,9 @@ const mensaje = document.getElementById("idMensaje");
 
 const idModal = document.getElementById("idModal");
 
-// Actividad 2: Persistencia de datos en LocalStorage (claves de almacenamiento)
 const CLAVE_PACIENTES = "guia6_pacientes";
 const CLAVE_PAISES = "guia6_paises";
 
-// Actividad 2: Función para leer y parsear la información respaldada en LocalStorage
 const leerLista = (clave) => {
   try {
     const datos = JSON.parse(localStorage.getItem(clave));
@@ -33,7 +31,6 @@ const leerLista = (clave) => {
   }
 };
 
-// Actividad 2: Función para serializar y guardar los datos actualizados en LocalStorage
 const guardarLista = (clave, lista) => {
   try {
     localStorage.setItem(clave, JSON.stringify(lista));
@@ -42,7 +39,6 @@ const guardarLista = (clave, lista) => {
   }
 };
 
-// Actividad 2: Carga inicial de datos desde LocalStorage hacia la memoria del programa
 let arrayPaciente = leerLista(CLAVE_PACIENTES);
 let paisesExtra = leerLista(CLAVE_PAISES);
 
@@ -51,7 +47,6 @@ let indiceEdicion = null;
 const htmlBotonGuardar = `<i class="bi bi-person-plus-fill"></i> Guardar Datos`;
 const htmlBotonActualizar = `<i class="bi bi-check-circle-fill"></i> Actualizar datos`;
 
-// Actividad 1: Función para resetear el estado y regresar del modo edición al modo registro
 const salirModoEdicion = () => {
   indiceEdicion = null;
   buttonAgregarPaciente.innerHTML = htmlBotonGuardar;
@@ -104,14 +99,12 @@ const addPaciente = function () {
     const estabaEditando = indiceEdicion !== null;
 
     if (estabaEditando) {
-      // Actividad 1: Actualización del registro existente con los nuevos valores del formulario
       arrayPaciente[indiceEdicion] = datos;
       mensaje.innerHTML = "Paciente actualizado correctamente";
     } else {
       arrayPaciente.push(datos);
       mensaje.innerHTML = "Se ha registrado un nuevo paciente";
     }
-    // Actividad 2: Guardado automático de los cambios (alta o edición) en LocalStorage
     guardarLista(CLAVE_PACIENTES, arrayPaciente);
 
     toast.show();
@@ -129,7 +122,6 @@ function imprimirFilas() {
   let contador = 1;
 
   arrayPaciente.forEach((element, indice) => {
-    // Actividad 1: Inclusión de atributos data-accion y data-indice para habilitar Editar y Eliminar
     $fila += `<tr>
       <td scope="row" class="text-center fw-bold">${contador}</td>
       <td>${element[0]}</td>
@@ -180,7 +172,6 @@ const imprimirPacientes = () => {
   contenedor.innerHTML = $table;
 };
 
-// Actividad 1: Función que carga los datos seleccionados en los campos del formulario para editarlos
 const editarPaciente = (indice) => {
   const p = arrayPaciente[indice];
 
@@ -202,13 +193,11 @@ const editarPaciente = (indice) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-// Actividad 1: Función para suprimir un paciente del arreglo y refrescar la vista
 const eliminarPaciente = (indice) => {
   const p = arrayPaciente[indice];
 
   if (confirm(`¿Desea eliminar al paciente ${p[0]} ${p[1]}?`)) {
     arrayPaciente.splice(indice, 1);
-    // Actividad 2: Actualización del almacenamiento en LocalStorage tras eliminar el registro
     guardarLista(CLAVE_PACIENTES, arrayPaciente);
 
     if (indiceEdicion !== null) limpiarForm();
@@ -219,7 +208,6 @@ const eliminarPaciente = (indice) => {
   }
 };
 
-// Actividad 1: Manejador de eventos delegado para capturar las pulsaciones de los botones Editar y Eliminar
 document.getElementById("idTablaPacientes").addEventListener("click", (e) => {
   const boton = e.target.closest("button[data-accion]");
   if (!boton) return;
@@ -236,7 +224,6 @@ const crearOptionPais = (nombre) => {
   cmbPais.appendChild(option);
 };
 
-// Actividad 2: Carga persistente de países adicionales agregados en sesiones anteriores
 paisesExtra.forEach((nombre) => crearOptionPais(nombre));
 
 const addPais = (e) => {
@@ -247,7 +234,6 @@ const addPais = (e) => {
   if (paisNew != "") {
     crearOptionPais(paisNew);
     paisesExtra.push(paisNew);
-    // Actividad 2: Guardado persistente de países extra en LocalStorage
     guardarLista(CLAVE_PAISES, paisesExtra);
 
     inputNombrePais.value = "";
@@ -286,63 +272,3 @@ idModal.addEventListener("shown.bs.modal", () => {
 
 limpiarForm();
 imprimirPacientes();
-
-// =========================================================================================
-// Actividad 3: Validaciones con Expresiones Regulares para ficha de estudiante
-// =========================================================================================
-
-// Definición de expresiones regulares requeridas
-const patronesValidacion = {
-  // Carnet: Dos letras seguidas de tres números (Ejemplo: AB001)
-  carnet: /^[A-Za-z]{2}\d{3}$/,
-
-  // Nombre completo: Solo letras y espacios (admite tildes y diéresis)
-  nombreCompleto: /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$/,
-
-  // DUI: 8 dígitos, un guion y 1 dígito verificador (########-#)
-  dui: /^\d{8}-\d{1}$/,
-
-  // NIT: 4 dígitos, guion, 6 dígitos, guion, 3 dígitos, guion y 1 dígito (####-######-###-#)
-  nit: /^\d{4}-\d{6}-\d{3}-\d{1}$/,
-
-  // Fecha de nacimiento: Formato día, mes y año numérico (DD/MM/AAAA o DD-MM-AAAA)
-  fechaNacimiento: /^(0[1-9]|[12]\d|3[01])[/-](0[1-9]|1[0-2])[/-]\d{4}$/,
-
-  // Correo electrónico estándar
-  correo: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/,
-
-  // Edad: Únicamente caracteres numéricos enteros positivos
-  edad: /^\d+$/
-};
-
-// Función de validación integral para la ficha del estudiante
-function validarFichaEstudiante(estudiante) {
-  let errores = [];
-
-  if (!patronesValidacion.carnet.test(estudiante.carnet)) {
-    errores.push("Carnet inválido. Formato requerido: dos letras y tres números (ej. AB001).");
-  }
-  if (!patronesValidacion.nombreCompleto.test(estudiante.nombre)) {
-    errores.push("Nombre inválido. No debe contener números ni caracteres especiales.");
-  }
-  if (!patronesValidacion.dui.test(estudiante.dui)) {
-    errores.push("DUI inválido. Formato requerido: ########-#.");
-  }
-  if (!patronesValidacion.nit.test(estudiante.nit)) {
-    errores.push("NIT inválido. Formato requerido: ####-######-###-#.");
-  }
-  if (!patronesValidacion.fechaNacimiento.test(estudiante.fechaNacimiento)) {
-    errores.push("Fecha inválida. Use formato DD/MM/AAAA o DD-MM-AAAA.");
-  }
-  if (!patronesValidacion.correo.test(estudiante.correo)) {
-    errores.push("Correo electrónico con formato inválido.");
-  }
-  if (!patronesValidacion.edad.test(estudiante.edad)) {
-    errores.push("Edad inválida. Debe contener solo números.");
-  }
-
-  return {
-    valido: errores.length === 0,
-    errores: errores
-  };
-}

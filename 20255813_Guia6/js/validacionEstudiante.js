@@ -1,22 +1,8 @@
-// ============================================================
-// Ejercicio complementario 3: validación con expresiones regulares
-// Ficha de estudiante
-// ============================================================
 
-/*
-Cada campo tiene:
-  - regex:   expresión regular que valida el FORMATO
-  - mensaje: texto que se muestra si el formato no coincide
-  - extra:   (opcional) validación adicional que una regex no puede hacer
-             (devuelve un mensaje de error, o "" si todo está bien)
-*/
-
-// Valida que la fecha dd/mm/aaaa exista de verdad (no 30/02) y no sea futura
 const validarFechaReal = (valor) => {
   const [dia, mes, anio] = valor.split("/").map(Number);
   const fecha = new Date(anio, mes - 1, dia);
 
-  // Si el día no existe, JavaScript "corrige" la fecha (30/02 -> 02/03)
   const existe =
     fecha.getFullYear() === anio &&
     fecha.getMonth() === mes - 1 &&
@@ -34,20 +20,17 @@ const validarRangoEdad = (valor) => {
 };
 
 const reglas = {
-  // Dos letras y tres números. Ejemplo: AB001
   idTxtCarnet: {
     regex: /^[A-Za-z]{2}\d{3}$/,
     mensaje: "Formato inválido. Use dos letras y tres números. Ejemplo: AB001",
   },
 
-  // Al menos dos palabras (nombre y apellido), solo letras y espacios simples
   idTxtNombre: {
     regex: /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?: [A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)+$/,
     mensaje:
       "Escriba nombre y apellido usando solo letras y un espacio entre palabras (sin números ni caracteres especiales).",
   },
 
-  // 8 dígitos, guion, 1 dígito. Ejemplo: 01234567-8
   idTxtDui: {
     regex: /^\d{8}-\d$/,
     mensaje: "Formato inválido. Use ########-#. Ejemplo: 01234567-8",
